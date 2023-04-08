@@ -16,6 +16,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         worksans: ['Work Sans', "sans-serif"],
         cedarville: ['Cedarville Cursive', 'cursive'],
+        waterbrush: ['Water Brush', 'cursive'],
       },
     },
     screens: {
