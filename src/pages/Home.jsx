@@ -74,7 +74,7 @@ function Home() {
                 
             </div>
             {/* Small screen layout */}
-            <div className="grid grid-cols-2 sm:hidden font-waterbrush text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm pb-4">
+            <div className="grid grid-cols-2 sm:hidden font-waterbrush text-white sm:text-3xl text-xl pb-4 scale-95">
                 <div className="inline-block relative p-2">
                     <img src="./images/dubai-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
                     <h1 className='absolute top-[45%] left-[38%]'>Dubai</h1>
@@ -85,7 +85,7 @@ function Home() {
                 </div>
                 <div className="inline-block relative p-2">
                     <img src="./images/japan-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-                    <h1 className='absolute top-[45%] left-[45%]'>Japan</h1>
+                    <h1 className='absolute top-[45%] left-[40%]'>Japan</h1>
                 </div>
                 <div className="inline-block relative p-2">
                     <img src="./images/hungary-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
