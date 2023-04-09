@@ -1,86 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import InfoCard from './components/InfoCard'
-import Button from './components/Button'
-import { RxChevronDown } from 'react-icons/rx'
-import { SlLocationPin } from "react-icons/sl"
-import { BsCalendar4Week } from "react-icons/bs"
-import { TfiSearch } from "react-icons/tfi"
-import 'animate.css';
-// import dubai from "./assets/images/dubai-sq.jpg"
-// import singapore from "./assets/images/dubai-sq.jpg"
+import Home from './pages/home'
+
 
 const App = () => (
   <div className="">
-    {/* Hero section  */}
-    <div className='text-white w-full min-h-[100vh] overflow-hidden bg-cover bg-[url("/images/bayhd.jpg")] bg-left flex flex-col pb-4'>
-      <div className={`sm:px-16 px-6 flex justify-center items-center`}>
-        <div className={`xl:max-w-[1280px] w-full`}>
-          <Navbar />
-        </div>
-      </div>
-      <div className='flex flex-row flex-1 pb-4'>
-        <div className="flex flex-col ss:px-16 px-4 justify-center items-start md:w-[45%] ss:w-[50%] w-[90%] text-left mr-4">
-          <h2 className='animate__animated animate__fadeInLeft xl:text-8xl ss:text-4xl text-2xl font-cedarville'>Upcoming Tours</h2>
-          <h1 className='animate__animated animate__fadeInLeft xl:text-[8rem] ss:text-[4rem] text-[2.75rem] font-worksans font-semibold leading-[1] py-4'>Elafonissi Beach</h1>
-          <p className="animate__animated animate__fadeInLeft pb-4 xl:text-4xl">
-            Crete's Elafonissi Beach's immense popularity comes from its pretty pinkish sand, warm lagoon-like waters, and very wild feel. Elafonissi Beach is actually an island, separated from the mainland by the shallow water and sandbars that only disappear under about three feet of water at high tide.
-          </p>
-          <div className="animate__animated animate__fadeInUp bg-white/20 shadow-xl rounded-xl py-4 backdrop-blur-md flex flex-row min-w-[100%] ss:px-4">
-            <div className="flex justify-around w-[80%]">
-              <InfoCard icon={SlLocationPin} label={"Location"} data={"Greece"}></InfoCard>
-              <InfoCard icon={BsCalendar4Week} label={"Date"} data={"24 May, 2023"}></InfoCard>
-            </div>
-            <div className='flex flex-col justify-center'>
-              <Button style="" icon={TfiSearch}/>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <RxChevronDown className='animate-bounce drop-shadow-[0_0_5px_rgba(0,0,0,0.8)] shadow-black text-[32px]'/>
-      </div>
-    </div>
-
-    {/* Destinations */}
-    <div className="flex flex-col">
-      <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-cedarville pt-10 text-red-600'>Our Top</h1>
-      <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>DESTINATIONS</h1>
-      <div className="flex flex-row p-4 scale-95 font-waterbrush text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm">
-        <div className='inline-block relative w-[50%] h-[100%]'>
-          {/* TODO  */}
-          <img src="./images/dubai-sq.jpg" className='brightness-50 animate__animated hover:animate__fadeInUp' alt=""/>
-          <h1 className='absolute top-[45%] left-[42%]'>Dubai</h1>
-        </div>
-        <div className="flex flex-col h-[50%] w-[50%]">
-          <div className="flex flex-row ">
-            <div className="inline-block relative w-[50%] pl-4">
-              <img src="./images/singapore-sq.jpg" className='brightness-50' alt=""/>
-              <h1 className='absolute top-[45%] left-[38%]'>Singapore</h1>
-            </div>
-            <div className="inline-block relative w-[50%] pl-4">
-              <img src="./images/japan-sq.jpg" className='brightness-50' alt=""/>
-              <h1 className='absolute top-[45%] left-[42%]'>Japan</h1>
-            </div>
-          </div>
-          <div className="flex flex-row pt-8 ">
-            <div className="inline-block relative w-[50%] pl-4">
-              <img src="./images/india-sq.jpg" className='brightness-50' alt=""/>
-              <h1 className='absolute top-[45%] left-[42%]'>India</h1>
-            </div>
-            <div className="inline-block relative w-[50%] pl-4">
-              <img src="./images/hungary-sq.jpg" className='brightness-50' alt=""/>
-              <h1 className='absolute top-[45%] left-[38%]'>Hungary</h1>
-            </div>
-          </div>
-        </div>      
-      </div>
-      <div className='flex flex-row justify-center pb-4'>
-        <Button style="p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View More"/>
-      </div>
-    </div>
+    <Home/>
   </div>
   
 )
