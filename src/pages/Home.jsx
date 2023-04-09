@@ -41,43 +41,60 @@ function Home() {
             <RxChevronDown className='animate-bounce drop-shadow-[0_0_5px_rgba(0,0,0,0.8)] shadow-black text-[32px]'/>
         </div>
         </div>
-
         {/* Destinations */}
-        <div className="flex flex-col">
-        <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-cedarville pt-10 text-red-600'>Our Top</h1>
-        <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>DESTINATIONS</h1>
-        <div className="flex flex-row p-4 scale-95 font-waterbrush text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm">
-            <div className='inline-block relative w-[50%] h-[100%]'>
-            {/* TODO  */}
-            <img src="./images/dubai-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-            <h1 className='absolute top-[45%] left-[42%]'>Dubai</h1>
+        <div className="flex flex-col text-center">
+            <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-cedarville pt-10 text-red-600 '>Our Top</h1>
+            <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>DESTINATIONS</h1>
+            {/* Large screen layout  */}
+            <div className="hidden sm:flex flex-row scale-95 font-waterbrush text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm">
+                <div className='inline-block relative w-[49%]'>
+                    <img src="./images/dubai-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                    <h1 className='absolute top-[45%] left-[42%]'>Dubai</h1>
+                </div>
+                <div className="flex h-[50%] w-[50%]">
+                    <div className="grid grid-cols-2">
+                        <div className="inline-block relative pl-4 pb-4">
+                            <img src="./images/singapore-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                            <h1 className='absolute top-[45%] left-[38%]'>Singapore</h1>
+                        </div>
+                        <div className="inline-block relative pl-4 pb-4">
+                            <img src="./images/japan-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                            <h1 className='absolute top-[45%] left-[42%]'>Japan</h1>
+                        </div>
+                        <div className="inline-block relative pl-4 pb-4">
+                            <img src="./images/india-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                            <h1 className='absolute top-[45%] left-[42%]'>India</h1>
+                        </div>
+                        <div className="inline-block relative pl-4 pb-4">
+                            <img src="./images/hungary-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                            <h1 className='absolute top-[45%] left-[38%]'>Hungary</h1>
+                        </div>
+                    </div>
+                </div>      
+                
             </div>
-            <div className="flex flex-col h-[50%] w-[50%]">
-            <div className="flex flex-row ">
-                <div className="inline-block relative w-[50%] pl-4">
-                <img src="./images/singapore-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-                <h1 className='absolute top-[45%] left-[38%]'>Singapore</h1>
+            {/* Small screen layout */}
+            <div className="grid grid-cols-2 sm:hidden font-waterbrush text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm pb-4">
+                <div className="inline-block relative pl-6 pb-2">
+                    <img src="./images/dubai-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                    <h1 className='absolute top-[45%] left-[38%]'>Dubai</h1>
                 </div>
-                <div className="inline-block relative w-[50%] pl-4">
-                <img src="./images/japan-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-                <h1 className='absolute top-[45%] left-[42%]'>Japan</h1>
+                <div className="inline-block relative pl-2 pr-4 pb-2">
+                    <img src="./images/singapore-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                    <h1 className='absolute top-[45%] left-[38%]'>Singapore</h1>
                 </div>
-            </div>
-            <div className="flex flex-row pt-8 ">
-                <div className="inline-block relative w-[50%] pl-4">
-                <img src="./images/india-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-                <h1 className='absolute top-[45%] left-[42%]'>India</h1>
+                <div className="inline-block relative pl-6 pb-2">
+                    <img src="./images/japan-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                    <h1 className='absolute top-[45%] left-[45%]'>Japan</h1>
                 </div>
-                <div className="inline-block relative w-[50%] pl-4">
-                <img src="./images/hungary-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
-                <h1 className='absolute top-[45%] left-[38%]'>Hungary</h1>
+                <div className="inline-block relative pl-2 pr-4 pb-2">
+                    <img src="./images/hungary-sq.jpg" className='transition ease-in-out delay-250 hover:brightness-[0.25] duration-600 brightness-50' alt=""/>
+                    <h1 className='absolute top-[45%] left-[38%]'>Hungary</h1>
                 </div>
             </div>
-            </div>      
-        </div>
-        <div className='flex flex-row justify-center pb-4'>
-            <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View More"/>
-        </div>
+            <div className='flex flex-row justify-center pb-4'>
+                <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View More"/>
+            </div>
         </div>
     </div>
   )
