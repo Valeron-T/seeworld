@@ -10,12 +10,12 @@ function App() {
     // Background container
     <Routes>
       {/* <Route path="/" element={<Home />}> */}
-      <Route path="/" element={<Home/>}></Route>
-        {/* <Route index element={<Home />} key={"home"} />
-        <Route path="about-us" element={<AboutUs />} /> */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} key={"home"} />
+        <Route path="about-us" element={<AboutUs />} />
         {/* <Route path="contact" element={<Contact />} /> */}
         {/* <Route path="*" element={<NoPage />} /> */}
-      {/* </Route> */}
+      </Route>
     </Routes>
   )
 }
