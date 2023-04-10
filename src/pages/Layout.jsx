@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet, Link, useLocation } from "react-router-dom";
+import Footer from '../components/Footer';
 
 
 function Layout() {
@@ -7,6 +8,8 @@ function Layout() {
   return (
     <div>
         <Outlet key={location.pathname}/>
+        {/* Footer  */}
+        <Footer/>
     </div>
   )
 }
