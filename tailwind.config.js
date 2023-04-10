@@ -15,7 +15,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         worksans: ['Work Sans', "sans-serif"],
-        cedarville: ['Cedarville Cursive', 'cursive'],
+        clicker: ['Clicker Script', 'cursive'],
         waterbrush: ['Water Brush', 'cursive'],
       },
     },
