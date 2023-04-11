@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       {/* TODO: Replace logo */}
-      <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[124px] h-[37px]" />
+      <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px]" />
 
       <ul className="list-none rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (

@@ -7,6 +7,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Blacksword";
+  src: url("/fonts/Blacksword.otf");
+}
+
 :root {
   --black-gradient: linear-gradient(
     144.39deg,

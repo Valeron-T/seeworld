@@ -17,6 +17,7 @@ export default {
         worksans: ['Work Sans', "sans-serif"],
         clicker: ['Clicker Script', 'cursive'],
         waterbrush: ['Water Brush', 'cursive'],
+        blacksword: ['Blacksword', 'cursive'],
       },
     },
     screens: {
