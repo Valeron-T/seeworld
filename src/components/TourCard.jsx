@@ -1,10 +1,10 @@
 import React from 'react'
 
-function TourCard({place, days, price, img}) {
+function TourCard({place, days, price, img, onlyimg}) {
   return (
     <div className='flex flex-col p-4'>
-        <img src={`./images/${img ? img:""}.jpg`} className='rounded-t-xl' alt="" />
-        <div className='flex flex-row justify-between p-4 bg-[#fff0da] rounded-b-xl'>
+        <img src={`./images/${img ? img:""}.jpg`} className={`${onlyimg ? "rounded-xl shadow-2xl" : "rounded-t-xl" } `} alt="" />
+        <div className={`flex flex-row justify-between p-4 bg-[#fff0da] rounded-b-xl ${onlyimg ? "hidden":""} `}>
             <div className="flex flex-col text-start">
                 <h1 className='font-worksans font-medium uppercase'>{place}</h1>
                 <p className='font-worksans font-extralight'>{days} days trip</p>
