@@ -38,9 +38,9 @@ function Home() {
                 </div>
                 <div className='flex flex-row flex-1 pb-4'>
                     <div className="flex flex-col ss:px-16 px-4 justify-center items-start md:w-[45%] ss:w-[50%] w-[90%] text-left mr-4">
-                        <h2 className='animate__animated animate__fadeInLeft xl:text-8xl ss:text-4xl text-2xl font-blacksword'>Upcoming Tours</h2>
-                        <h1 className='animate__animated animate__fadeInLeft xl:text-[8rem] ss:text-[4rem] text-[2.75rem] font-worksans font-semibold leading-[1] py-4'>Elafonissi Beach</h1>
-                        <p className="animate__animated animate__fadeInLeft pb-4 xl:text-4xl">
+                        <h2 className='animate__animated animate__fadeInLeft ss:text-4xl text-2xl font-blacksword'>Upcoming Tours</h2>
+                        <h1 className='animate__animated animate__fadeInLeft ss:text-[4rem] text-[2.75rem] font-worksans font-semibold leading-[1] py-4'>Elafonissi Beach</h1>
+                        <p className="animate__animated animate__fadeInLeft pb-4 xl:text-2xl">
                             Crete's Elafonissi Beach's immense popularity comes from its pretty pinkish sand, warm lagoon-like waters, and very wild feel. Elafonissi Beach is actually an island, separated from the mainland by the shallow water and sandbars that only disappear under about three feet of water at high tide.
                         </p>
                         <div className="animate__animated animate__fadeInUp bg-white/20 shadow-xl rounded-xl py-4 backdrop-blur-md flex flex-row min-w-[100%] ss:px-4">
@@ -62,8 +62,8 @@ function Home() {
 
             {/* Offers  */}
             <div className="flex flex-col text-center bg-gray-200 p-4">
-                <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
-                <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Offers</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Offers</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
                     <TourCard img={"post1-sq"} onlyimg={true}/>
                     <TourCard img={"post2-sq"} onlyimg={true}/>
@@ -73,8 +73,8 @@ function Home() {
 
             {/* Destinations */}
             <div className="flex flex-col text-center">
-                <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
-                <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>DESTINATIONS</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>DESTINATIONS</h1>
                 {/* Large screen layout  */}
                 <div className="hidden sm:flex flex-row scale-95 font-blacksword text-white xl:text-6xl md:text-3xl sm:text-2xl text-sm">
                     <div className='inline-block relative w-[50%] p-2'>
@@ -129,13 +129,13 @@ function Home() {
 
             {/* Services  */}
             <div className="flex flex-col text-center bg-gray-200 p-4">
-                <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
-                <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Services</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Services</h1>
                 <div className='grid sm:grid-cols-4 grid-cols-2 text-white pb-4'>
                     {services.map((data) =>
                         <div className='flex flex-col justify-center bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
                             {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""}
-                            <h2 className='font-worksans pt-2 font-semibold'>{data.title}</h2>
+                            <h2 className='font-worksans pt-2 font-semibold xl:text-2xl'>{data.title}</h2>
                             <p className='font-worksans pb-8 py-4 font-extralight w-[75%] self-center'>{data.desc}</p>
                         </div>
                     )}
@@ -147,8 +147,8 @@ function Home() {
 
             {/* Tour Packages  */}
             <div className="flex flex-col text-center p-4">
-                <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Popular</h1>
-                <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Tour Packages</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Popular</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Tour Packages</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
                     <TourCard place={"Tokyo, Japan"} days={5} price={"50,000"} img={"japan-sq"} />
                     <TourCard place={"Budapest, Hungary"} days={10} price={"75,000"} img={"hungary-sq"} />
@@ -161,8 +161,8 @@ function Home() {
 
             {/* Reviews  */}
             <div className="flex flex-col text-center p-4 bg-gray-200">
-                <h1 className='animate__animated animate__fadeInUp xl:text-8xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
-                <h1 className='animate__animated animate__fadeInUp xl:text-[8rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Reviews</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
+                <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Reviews</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 self-center p-4'>
                     <FeedbackCard name={"Benita D'Souza"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
                     <FeedbackCard name={"Benita D'Souza"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />

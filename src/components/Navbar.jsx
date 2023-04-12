@@ -33,9 +33,9 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       {/* TODO: Replace logo */}
-      <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px]" />
+      <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px] xl:scale-150" />
 
-      <ul className="list-none rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
+      <ul className="list-none xl:scale-150 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (
           <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px] ${index == navLinks.length-1 ? 'mr-0' : 'mr-14'} text-white hover:opacity-75`}>
             <a href={`${nav.id}`}>
