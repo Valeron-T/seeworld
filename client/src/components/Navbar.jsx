@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-3 justify-between items-center navbar">
       {/* TODO: Replace logo */}
       <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px] xl:scale-150" />
 
