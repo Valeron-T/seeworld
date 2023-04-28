@@ -1,11 +1,8 @@
 import React from 'react'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import InfoCard from '../components/InfoCard'
 import Button from '../components/Button'
-import { RxChevronDown } from 'react-icons/rx'
-import { SlLocationPin } from "react-icons/sl"
-import { BsCalendar4Week } from "react-icons/bs"
-import { TfiSearch } from "react-icons/tfi"
 import { RiCarLine } from "react-icons/ri"
 import { TbRubberStamp, TbPlaneTilt, TbSpeedboat } from "react-icons/tb"
 import { FaPassport } from "react-icons/fa"
@@ -29,6 +26,16 @@ function Home() {
     ]
 
     let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
+
+    async function getDestinations() {
+        const response = await fetch(`https://api.seeworlddestinations.com/destinations`);
+        const jsonData = await response.json();
+        console.log(jsonData)
+    }
+
+    useEffect(() => {
+        getDestinations()
+      }, []);
 
     return (
         <div>
