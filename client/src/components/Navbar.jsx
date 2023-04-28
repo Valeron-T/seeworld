@@ -1,8 +1,9 @@
 import {useState} from "react";
-
+import { Link } from "react-router-dom";
 import close from "../assets/close.svg"
 import logo from "../assets/logo.svg"
 import menu from "../assets/menu.svg"
+
 // import { navLinks } from "../constants";
 
 const Navbar = () => {
@@ -38,9 +39,10 @@ const Navbar = () => {
       <ul className="list-none xl:scale-150 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (
           <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px] ${index == navLinks.length-1 ? 'mr-0' : 'mr-14'} text-white hover:opacity-75`}>
-            <a href={`${nav.id}`}>
+            {/* <a href={`${nav.id}`}>
               {nav.title}
-            </a>
+            </a> */}
+            <Link to={nav.id}>{nav.title}</Link>
           </li>
         ))}
       </ul>
