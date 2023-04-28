@@ -15,14 +15,14 @@ import Carousel from '../components/Carousel'
 
 function Home() {
     let services = [
-        { title: 'Passport & Visa', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: FaPassport },
-        { title: 'Corporate M.I.C.E', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: MdOutlineCorporateFare },
-        { title: 'Holiday Packages', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: MdOutlineTravelExplore },
-        { title: 'Air Tickets', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: MdOutlineAirplaneTicket },
-        { title: 'Attestation', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: TbRubberStamp },
-        { title: 'Travel Insurance', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: TbPlaneTilt },
-        { title: 'Cruises', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: TbSpeedboat },
-        { title: 'Vehicles on Hire', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", icon: RiCarLine }
+        { title: 'Passport & Visa', desc: "Hassle-free passport and visa application services for international travel", icon: FaPassport },
+        { title: 'Corporate M.I.C.E', desc: "Tailored corporate meetings, incentives, conferences, and events planning services.", icon: MdOutlineCorporateFare },
+        { title: 'Holiday Packages', desc: "Customized holiday packages to exotic destinations around the world.", icon: MdOutlineTravelExplore },
+        { title: 'Air Tickets', desc: "Convenient booking of domestic and international air tickets.", icon: MdOutlineAirplaneTicket },
+        { title: 'Attestation', desc: "Legalization of documents for foreign travel and immigration purposes.", icon: TbRubberStamp },
+        { title: 'Travel Insurance', desc: "Comprehensive travel insurance coverage for peace of mind during your trip.", icon: TbPlaneTilt },
+        { title: 'Cruises', desc: "Memorable cruise experiences to stunning destinations worldwide.", icon: TbSpeedboat },
+        { title: 'Vehicles on Hire', desc: "Reliable and comfortable vehicles for hire, perfect for exploring your destination.", icon: RiCarLine }
     ]
 
     let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
