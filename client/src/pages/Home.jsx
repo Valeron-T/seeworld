@@ -27,15 +27,6 @@ function Home() {
 
     let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
 
-    async function getDestinations() {
-        const response = await fetch(`https://api.seeworlddestinations.com/destinations`);
-        const jsonData = await response.json();
-        console.log(jsonData)
-    }
-
-    useEffect(() => {
-        getDestinations()
-      }, []);
 
     return (
         <div>
