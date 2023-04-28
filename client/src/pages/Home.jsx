@@ -15,14 +15,14 @@ import Carousel from '../components/Carousel'
 
 function Home() {
     let services = [
-        { title: 'Passport & Visa', desc: "Hassle-free passport and visa application services for international travel", icon: FaPassport },
-        { title: 'Corporate M.I.C.E', desc: "Tailored corporate meetings, incentives, conferences, and events planning services.", icon: MdOutlineCorporateFare },
-        { title: 'Holiday Packages', desc: "Customized holiday packages to exotic destinations around the world.", icon: MdOutlineTravelExplore },
-        { title: 'Air Tickets', desc: "Convenient booking of domestic and international air tickets.", icon: MdOutlineAirplaneTicket },
-        { title: 'Attestation', desc: "Legalization of documents for foreign travel and immigration purposes.", icon: TbRubberStamp },
-        { title: 'Travel Insurance', desc: "Comprehensive travel insurance coverage for peace of mind during your trip.", icon: TbPlaneTilt },
-        { title: 'Cruises', desc: "Memorable cruise experiences to stunning destinations worldwide.", icon: TbSpeedboat },
-        { title: 'Vehicles on Hire', desc: "Reliable and comfortable vehicles for hire, perfect for exploring your destination.", icon: RiCarLine }
+        { title: 'Passport & Visa', desc: "Hassle-free passport and visa application services for international travel", icon: "passport" },
+        { title: 'Corporate M.I.C.E', desc: "Tailored corporate meetings, incentives, conferences, and events planning services.", icon: "corporate" },
+        { title: 'Holiday Packages', desc: "Customized holiday packages to exotic destinations around the world.", icon: "holiday"},
+        { title: 'Air Tickets', desc: "Convenient booking of domestic and international air tickets.", icon: "tickets" },
+        { title: 'Attestation', desc: "Legalization of documents for foreign travel and immigration purposes.", icon: "attestation" },
+        { title: 'Travel Insurance', desc: "Comprehensive travel insurance coverage for peace of mind during your trip.", icon: "insurance" },
+        { title: 'Cruises', desc: "Memorable cruise experiences to stunning destinations worldwide.", icon: "cruise" },
+        { title: 'Vehicles on Hire', desc: "Reliable and comfortable vehicles for hire, perfect for exploring your destination.", icon: "vehicle" }
     ]
 
     let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
@@ -71,7 +71,8 @@ function Home() {
                 <div className='grid sm:grid-cols-4 grid-cols-2 text-white pb-4'>
                     {services.map((data) =>
                         <div className='flex flex-col justify-center bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
-                            {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""}
+                            {/* {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""} */}
+                            <img src={`/images/${data.icon}.png`} alt="" srcset="" className='h-64 w-64 p-8 self-center'/>
                             <h2 className='font-worksans pt-2 font-semibold xl:text-2xl'>{data.title}</h2>
                             <p className='font-worksans pb-8 py-4 font-extralight w-[75%] self-center'>{data.desc}</p>
                         </div>
