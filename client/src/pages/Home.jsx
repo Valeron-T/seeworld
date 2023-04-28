@@ -54,7 +54,7 @@ function Home() {
             </div>
 
             {/* Offers  */}
-            <div className="flex flex-col text-center bg-gray-200 p-4">
+            <div className="flex flex-col text-center p-4">
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Offers</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>

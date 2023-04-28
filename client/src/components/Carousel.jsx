@@ -21,11 +21,11 @@ export default function Carousel({
   }, [])
   return (
     <div className="overflow-hidden relative max-h-[100vh]">
-        <div className={`sm:px-16 px-6 absolute flex justify-center items-center z-30 w-full`}>
-            <div className={`xl:max-w-[1280px] w-full`}>
-                <Navbar />
-            </div>
+      <div className={`sm:px-16 px-6 absolute flex justify-center items-center z-30 w-full`}>
+        <div className={`xl:max-w-[1280px] w-full`}>
+          <Navbar />
         </div>
+      </div>
       <div
         className="flex transition-transform ease-out duration-500"
         style={{ transform: `translateX(-${curr * 100}%)` }}
@@ -43,7 +43,7 @@ export default function Carousel({
           onClick={next}
           className="p-1 rounded-full shadow bg-white/20 text-gray-800 hover:bg-white/50"
         >
-        <RxChevronRight size={40} />
+          <RxChevronRight size={40} />
         </button>
       </div>
 

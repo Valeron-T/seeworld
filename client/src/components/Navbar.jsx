@@ -10,7 +10,7 @@ const Navbar = () => {
   const [toggle, settoggle] = useState(false)
   let navLinks = [
     {
-      id: "home",
+      id: "",
       title: "Home",
     },
     {
@@ -39,10 +39,7 @@ const Navbar = () => {
       <ul className="list-none xl:scale-150 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (
           <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px] ${index == navLinks.length-1 ? 'mr-0' : 'mr-14'} text-white hover:opacity-75`}>
-            {/* <a href={`${nav.id}`}>
-              {nav.title}
-            </a> */}
-            <Link to={nav.id}>{nav.title}</Link>
+            <Link to={`/${nav.id}`}>{nav.title}</Link>
           </li>
         ))}
       </ul>
