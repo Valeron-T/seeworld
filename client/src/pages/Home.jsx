@@ -7,11 +7,12 @@ import { RiCarLine } from "react-icons/ri"
 import { TbRubberStamp, TbPlaneTilt, TbSpeedboat } from "react-icons/tb"
 import { FaPassport } from "react-icons/fa"
 import { MdOutlineCorporateFare, MdOutlineAirplaneTicket, MdOutlineTravelExplore } from "react-icons/md"
-import 'animate.css';
+import 'animate.css'
 import TourCard from '../components/TourCard'
 import FeedbackCard from '../components/FeedbackCard'
 import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
+import { Link } from 'react-router-dom'
 
 function Home() {
     let services = [
@@ -81,7 +82,7 @@ function Home() {
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
                     <TourCard place={"Tokyo, Japan"} days={5} price={"50,000"} img={"japan-sq"} />
                     <TourCard place={"Budapest, Hungary"} days={10} price={"75,000"} img={"hungary-sq"} />
-                    <TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} />
+                    <Link to={`/destinations/Kerala`}><TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} /></Link>
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
                     <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="Learn More" />
