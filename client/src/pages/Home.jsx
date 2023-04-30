@@ -26,27 +26,36 @@ function Home() {
         { title: 'Vehicles on Hire', desc: "Reliable and comfortable vehicles for hire, perfect for exploring your destination.", icon: "vehicle" }
     ]
 
-    let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
+    let slides = ['/images/banner1.jpg','/images/banner2.jpg','/images/banner3.jpg',]
+    let slides2 = ['/images/post1-sq.jpg','/images/post2-sq.jpg','/images/post3-sq.jpg',]
 
 
     return (
         <div>
             {/* Hero section  */}
-            <div className={`text-white w-full sm:min-h-[100vh] overflow-hidden bg-gray-200 bg-left flex flex-col`}>
-                <div className='flex flex-col max-w-[100%] self-center'>
-                    <Carousel children={slides} autoSlide={true} autoSlideInterval={3000}>
+            <div className={`text-white w-full overflow-hidden bg-amber-600 bg-left flex flex-col`}>
+                <div className='flex flex-col max-w-[100%] self-center max-sm:hidden'>
+                    <Carousel children={slides} autoSlide={true} autoSlideInterval={5000}>
                         {slides.map((s) => (
-                            <img src={s} className='aspect-auto'/>
+                            <img src={s} style={{'min-width': '-webkit-fill-available'}} className=''/>
                         ))}
                     </Carousel>
                 </div>
+                <div className='flex flex-col max-w-[100%] self-center sm:hidden'>
+                    <Carousel children={slides} autoSlide={true} autoSlideInterval={5000}>
+                        {slides2.map((s) => (
+                            <img src={s} style={{'min-width': '-webkit-fill-available'}} className=''/>
+                        ))}
+                    </Carousel>
+                </div>
+                
                 {/* <div className="flex justify-center">
                     <RxChevronDown className='animate-bounce drop-shadow-[0_0_5px_rgba(0,0,0,0.8)] shadow-black text-[32px]' />
                 </div> */}
             </div>
 
             {/* Offers  */}
-            <div className="flex flex-col text-center p-4">
+            {/* <div className="flex flex-col text-center p-4">
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Offers</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
@@ -54,13 +63,13 @@ function Home() {
                     <TourCard img={"post2-sq"} onlyimg={true}/>
                     <TourCard img={"post3-sq"} onlyimg={true}/>
                 </div>
-            </div>
+            </div> */}
 
             {/* Services  */}
             <div className="flex flex-col text-center bg-gray-200 p-4">
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Services</h1>
-                <div className='grid sm:grid-cols-4 xs:grid-cols-2 grid-cols-1 text-white pb-4'>
+                <div className='grid sm:grid-cols-4 grid-cols-2 text-white pb-4'>
                     {services.map((data) =>
                         <div className='flex flex-col justify-center bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
                             {/* {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""} */}
