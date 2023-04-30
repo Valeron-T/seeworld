@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-3 justify-between items-center navbar">
       {/* TODO: Replace logo */}
-      <img src="./images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px] xl:scale-150" />
+      <img src="/images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px] xl:scale-150" />
 
       <ul className="list-none xl:scale-150 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (
@@ -51,9 +51,7 @@ const Navbar = () => {
           <ul className="list-none flex flex-col justify-end items-center flex-1">
             {navLinks.map((nav, index) => (
               <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px] ${index == navLinks.length-1 ? 'mb-0' : 'mb-5'} text-white`}>
-                <a href={`${nav.id}`}>
-                  {nav.title}
-                </a>
+                <Link to={`/${nav.id}`}>{nav.title}</Link>
               </li>
             ))}
           </ul>

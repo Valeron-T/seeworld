@@ -7,11 +7,12 @@ import { RiCarLine } from "react-icons/ri"
 import { TbRubberStamp, TbPlaneTilt, TbSpeedboat } from "react-icons/tb"
 import { FaPassport } from "react-icons/fa"
 import { MdOutlineCorporateFare, MdOutlineAirplaneTicket, MdOutlineTravelExplore } from "react-icons/md"
-import 'animate.css';
+import 'animate.css'
 import TourCard from '../components/TourCard'
 import FeedbackCard from '../components/FeedbackCard'
 import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
+import { Link } from 'react-router-dom'
 
 function Home() {
     let services = [
@@ -27,15 +28,6 @@ function Home() {
 
     let slides = ['/images/bayhd.webp','/images/bayhd.webp','/images/bayhd.webp',]
 
-    async function getDestinations() {
-        const response = await fetch(`https://api.seeworlddestinations.com/destinations`);
-        const jsonData = await response.json();
-        console.log(jsonData)
-    }
-
-    useEffect(() => {
-        getDestinations()
-      }, []);
 
     return (
         <div>
@@ -68,11 +60,11 @@ function Home() {
             <div className="flex flex-col text-center bg-gray-200 p-4">
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Services</h1>
-                <div className='grid sm:grid-cols-4 grid-cols-2 text-white pb-4'>
+                <div className='grid sm:grid-cols-4 xs:grid-cols-2 grid-cols-1 text-white pb-4'>
                     {services.map((data) =>
                         <div className='flex flex-col justify-center bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
                             {/* {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""} */}
-                            <img src={`/images/${data.icon}.png`} alt="" srcset="" className='h-64 w-64 p-8 self-center'/>
+                            <img src={`/images/${data.icon}.png`} alt="" srcset="" className='w-64 p-8 self-center bg-contain'/>
                             <h2 className='font-worksans pt-2 font-semibold xl:text-2xl'>{data.title}</h2>
                             <p className='font-worksans pb-8 py-4 font-extralight w-[75%] self-center'>{data.desc}</p>
                         </div>
@@ -90,7 +82,7 @@ function Home() {
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
                     <TourCard place={"Tokyo, Japan"} days={5} price={"50,000"} img={"japan-sq"} />
                     <TourCard place={"Budapest, Hungary"} days={10} price={"75,000"} img={"hungary-sq"} />
-                    <TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} />
+                    <Link to={`/destinations/Kerala`}><TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} /></Link>
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
                     <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="Learn More" />
