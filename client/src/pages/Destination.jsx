@@ -9,7 +9,7 @@ function Destination() {
     const [info, setinfo] = useState({})
 
     async function getDestinations() {
-        const response = await fetch(`http://localhost:3000/destinations/${params.destination}`);
+        const response = await fetch(`https://api.seeworlddestinations.com/destinations/${params.destination}`);
         const jsonData = await response.json();
         console.log(jsonData.data[0])
         setinfo(jsonData.data[0])
