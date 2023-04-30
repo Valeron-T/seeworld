@@ -94,9 +94,9 @@ function Home() {
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Reviews</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 self-center p-4'>
-                    <FeedbackCard name={"Benita D'Souza"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
-                    <FeedbackCard name={"Benita D'Souza"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
-                    <FeedbackCard name={"Benita D'Souza"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
+                    <FeedbackCard name={"Benita DMello"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
+                    <FeedbackCard name={"Rajesh Kotian"} content={"Excellent Service. Quick and Prompt response. Needed an urgent flight ticket, got it done in a matter of 15 minutes at economical price as well."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
+                    <FeedbackCard name={"Linus Rodrigues"} content={"Very courteous and extremely helpful. Follows up on all aspects of the trip to ensure customer is satisfied."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
                     <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View All" />
