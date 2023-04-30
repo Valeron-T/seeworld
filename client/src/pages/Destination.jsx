@@ -32,7 +32,7 @@ function Destination() {
 
                 <div className="flex flex-1 sm:flex-row flex-col justify-around sm:px-16 px-6">
                     <div className="flex flex-col flex-1 self-center w-[50%]">
-                        <h1 className='animate__animated animate__fadeInUp sm:text-8xl text-4xl font-extrabold uppercase text-white sm:text-left text-center sm:pl-4'>{info.name}</h1>
+                        <h1 className='animate__animated animate__fadeInUp drop-shadow-2xl sm:text-8xl text-4xl font-extrabold uppercase text-white sm:text-left text-center sm:pl-4'>{info.name}</h1>
                         <h1 className='animate__animated animate__fadeInLeft sm:text-xl text-md text-white sm:text-left text-center font-worksans font-extralight sm:pl-4'>{info.tagline}</h1>
                         <div className='flex flex-row text-white py-4 font-worksans sm:scale-100 scale-90 max-sm:self-center'>
                             <Button text={"Book Now"} />
