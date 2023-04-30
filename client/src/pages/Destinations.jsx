@@ -33,7 +33,7 @@ function Destinations() {
 
   async function getDestinations(filters) {
     let queryString = formatQueryString(filters)
-    const response = await fetch(`http://localhost:3000/destinations?${queryString}`);
+    const response = await fetch(`https://api.seeworlddestinations.com/destinations?${queryString}`);
     const jsonData = await response.json();
     console.log(jsonData.data)
     setresults(jsonData.data)
