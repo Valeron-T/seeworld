@@ -20,19 +20,19 @@ export default function Carousel({
     return () => clearInterval(slideInterval)
   }, [])
   return (
-    <div className="overflow-hidden relative max-h-[100vh]">
-      <div className={`sm:px-16 px-6 absolute flex justify-center items-center z-30 w-full`}>
+    <div className="relative">
+      <div className={`sm:px-16 px-6 sm:absolute flex justify-center items-center z-30 w-full`}>
         <div className={`xl:max-w-[1280px] w-full`}>
           <Navbar />
         </div>
       </div>
       <div
-        className="flex transition-transform ease-out duration-500"
+        className="flex transition-transform ease-out duration-500 object-bottom"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}
       </div>
-      <div className="absolute inset-0 flex items-center justify-between p-4">
+      <div className="absolute inset-0 -z-10 flex items-center justify-between p-4">
         <button
           onClick={prev}
           className="p-1 rounded-full shadow bg-white/20 text-gray-800 hover:bg-white/50"
