@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import 'animate.css'
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
+import { Link } from 'react-router-dom'
 
 function Destinations() {
+  // var activePage = 0
+  var lastpg = 2-1 // replace with api call of number of destinations divided by 5
+  var [activePage, setactivePage] = useState(0)
   const continents = ["Asia", "Africa", "Americas", "Europe", "Australia", "Antarctica"]
   const [filters, setfilters] = useState({
     location: [],
     continents: [],
-    search: []
+    search: [],
+    page: "0".toString()
   })
   const [results, setresults] = useState([])
 
@@ -33,7 +39,7 @@ function Destinations() {
 
   async function getDestinations(filters) {
     let queryString = formatQueryString(filters)
-    const response = await fetch(`https://api.seeworlddestinations.com/destinations?${queryString}`);
+    const response = await fetch(`http://localhost:3000/destinations?${queryString}`);
     const jsonData = await response.json();
     console.log(jsonData.data)
     setresults(jsonData.data)
@@ -42,6 +48,12 @@ function Destinations() {
   useEffect(() => {
     getDestinations(filters)
   }, [filters])
+
+  useEffect(() => {
+    console.log(activePage) // This is be executed when `loading` state changes
+    setfilters((prevState) => ({...prevState,
+        page: activePage.toString()}))
+  }, [activePage])
 
   return (
     <div className='flex flex-col min-h-[100vh] bg-gray-700'>
@@ -99,7 +111,7 @@ function Destinations() {
 
           </div>
           <div className='flex flex-1 sm:pl-4 flex-col'>
-            <form className='w-full' onSubmit={handleSubmit}>
+            <form className='p-2 w-full' onSubmit={handleSubmit}>
               <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -109,12 +121,30 @@ function Destinations() {
                 <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
               </div>
             </form>
+            <div className="p-2 flex flex-row w-full justify-center text-white">
+              <div className='justify-center self-center pr-5 cursor-pointer' onClick={(e) => {
+                if (activePage > 0) {
+                  setactivePage(activePage-1)
+                }
+                }}>
+                <AiOutlineLeft/>
+              </div>
+              <p className='flex'>Page {activePage+1}</p>
+              <div className='justify-center self-center pl-5 cursor-pointer' onClick={(e) => {
+                if (activePage < lastpg) {
+                  setactivePage(activePage+1)
+                }
+              }}>
+                <AiOutlineRight />
+              </div>
+            </div>
             <div className='py-2'>
               {results.map((destination) => (
-                <div  style={{'--image-url': `url("/images/${destination.id}.jpg")`}} className='animate__animated animate__fadeInUp flex bg-cover bg-center p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
+                <Link to={`/destinations/${destination.name}`}>
+                <div style={{ '--image-url': `url("/images/${destination.id}.jpg")` }} className='animate__animated animate__fadeInUp flex bg-cover bg-center p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
                   <h1 className='text-white drop-shadow-2xl'>{destination.name}</h1>
                 </div>
-
+                </Link>
               ))}
             </div>
 

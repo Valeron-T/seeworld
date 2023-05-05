@@ -4,9 +4,6 @@ import Navbar from '../components/Navbar'
 import InfoCard from '../components/InfoCard'
 import Button from '../components/Button'
 import { RiCarLine } from "react-icons/ri"
-import { TbRubberStamp, TbPlaneTilt, TbSpeedboat } from "react-icons/tb"
-import { FaPassport } from "react-icons/fa"
-import { MdOutlineCorporateFare, MdOutlineAirplaneTicket, MdOutlineTravelExplore } from "react-icons/md"
 import 'animate.css'
 import TourCard from '../components/TourCard'
 import FeedbackCard from '../components/FeedbackCard'
@@ -71,7 +68,7 @@ function Home() {
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Services</h1>
                 <div className='grid sm:grid-cols-4 grid-cols-2 text-white pb-4'>
                     {services.map((data) =>
-                        <div className='flex flex-col justify-center bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
+                        <div className='flex flex-col justify-center rounded-3xl bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
                             {/* {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""} */}
                             <img src={`/images/${data.icon}.png`} alt="" srcset="" className='w-64 p-8 self-center bg-contain'/>
                             <h2 className='font-worksans pt-2 font-semibold xl:text-2xl'>{data.title}</h2>

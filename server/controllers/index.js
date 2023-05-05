@@ -24,6 +24,7 @@ exports.getAllDestinations = (req, res, next) => {
     ${req.query.search ? `WHERE name LIKE '${req.query.search}%'` : "WHERE name LIKE '%'"}
     ${req.query.location ? `AND location IN (${locationResult})` : ""}
     ${req.query.continents ? `AND continent IN (${continentsResult})` : ""}
+     AND uid > ${req.query.page * 5} ORDER BY uid LIMIT 5
     `, function (err, data, fields) {
     if (err) return next(new AppError(err))
     res.status(200).json({
