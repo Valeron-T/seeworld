@@ -30,7 +30,7 @@ function Home() {
     return (
         <div>
             {/* Hero section  */}
-            <div className={`text-white w-full overflow-hidden bg-amber-600 bg-left flex flex-col`}>
+            <div className={`text-white w-full overflow-hidden bg-purple-950 bg-left flex flex-col`}>
                 <div className='flex flex-col max-w-[100%] self-center max-sm:hidden'>
                     <Carousel children={slides} autoSlide={true} autoSlideInterval={5000}>
                         {slides.map((s) => (
@@ -86,8 +86,8 @@ function Home() {
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Popular</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Tour Packages</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 pb-4'>
-                    <TourCard place={"Tokyo, Japan"} days={5} price={"50,000"} img={"japan-sq"} />
-                    <TourCard place={"Budapest, Hungary"} days={10} price={"75,000"} img={"hungary-sq"} />
+                    <Link to={`/destinations/Assam`}><TourCard place={"Assam, India"} days={5} price={"20,000"} img={"assam"} /></Link>
+                    <Link to={`/destinations/Bihar`}><TourCard place={"Bihar, India"} days={6} price={"15,000"} img={"bihar"} /></Link>
                     <Link to={`/destinations/Kerala`}><TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} /></Link>
                 </div>
                 <div className='flex flex-row justify-center pb-4'>

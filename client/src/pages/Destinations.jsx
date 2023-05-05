@@ -121,23 +121,7 @@ function Destinations() {
                 <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
               </div>
             </form>
-            <div className="p-2 flex flex-row w-full justify-center text-white">
-              <div className='justify-center self-center pr-5 cursor-pointer' onClick={(e) => {
-                if (activePage > 0) {
-                  setactivePage(activePage-1)
-                }
-                }}>
-                <AiOutlineLeft/>
-              </div>
-              <p className='flex'>Page {activePage+1}</p>
-              <div className='justify-center self-center pl-5 cursor-pointer' onClick={(e) => {
-                if (activePage < lastpg) {
-                  setactivePage(activePage+1)
-                }
-              }}>
-                <AiOutlineRight />
-              </div>
-            </div>
+            
             <div className='py-2'>
               {results.map((destination) => (
                 <Link to={`/destinations/${destination.name}`}>
@@ -146,6 +130,24 @@ function Destinations() {
                 </div>
                 </Link>
               ))}
+            </div>
+
+            <div className="pb-6 p-2 flex flex-row w-full justify-center text-white">
+              <div className={`${activePage == 0 ? "text-gray-500": ""} justify-center self-center pr-5 cursor-pointer`} onClick={(e) => {
+                if (activePage > 0) {
+                  setactivePage(activePage-1)
+                }
+                }}>
+                <AiOutlineLeft/>
+              </div>
+              <p className='flex'>Page {activePage+1}</p>
+              <div className={`${activePage == lastpg ? "text-gray-500": ""} justify-center self-center pl-5 cursor-pointer`} onClick={(e) => {
+                if (activePage < lastpg) {
+                  setactivePage(activePage+1)
+                }
+              }}>
+                <AiOutlineRight />
+              </div>
             </div>
 
           </div>
