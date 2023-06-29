@@ -21,8 +21,8 @@ const Navbar = () => {
       title: "Destinations",
     },
     {
-      id: "services",
-      title: "Services",
+      id: "reviews",
+      title: "Reviews",
     },
     {
       id: "contact-us",
