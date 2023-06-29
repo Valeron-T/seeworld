@@ -15,7 +15,7 @@ function Home() {
     let services = [
         { title: 'Passport & Visa', desc: "Hassle-free passport and visa application services for international travel", icon: "passport" },
         { title: 'Corporate M.I.C.E', desc: "Tailored corporate meetings, incentives, conferences, and events planning services.", icon: "corporate" },
-        { title: 'Holiday Packages', desc: "Customized holiday packages to exotic destinations around the world.", icon: "holiday"},
+        { title: 'Holiday Packages', desc: "Customized holiday packages to exotic destinations around the world.", icon: "holiday" },
         { title: 'Air Tickets', desc: "Convenient booking of domestic and international air tickets.", icon: "tickets" },
         { title: 'Attestation', desc: "Legalization of documents for foreign travel and immigration purposes.", icon: "attestation" },
         { title: 'Travel Insurance', desc: "Comprehensive travel insurance coverage for peace of mind during your trip.", icon: "insurance" },
@@ -23,9 +23,8 @@ function Home() {
         { title: 'Vehicles on Hire', desc: "Reliable and comfortable vehicles for hire, perfect for exploring your destination.", icon: "vehicle" }
     ]
 
-    let slides = ['/images/banner1.jpg','/images/banner2.jpg','/images/banner3.jpg',]
-    let slides2 = ['/images/post1-sq.jpg','/images/post2-sq.jpg','/images/post3-sq.jpg',]
-
+    let slides = ['/images/holy.png', '/images/banner1.jpg', '/images/banner2.jpg', '/images/banner3.jpg',]
+    let slides2 = ['/images/holy-sq.png', '/images/post1-sq.jpg', '/images/post2-sq.jpg', '/images/post3-sq.jpg',]
 
     return (
         <div>
@@ -34,18 +33,18 @@ function Home() {
                 <div className='flex flex-col max-w-[100%] self-center max-sm:hidden'>
                     <Carousel children={slides} autoSlide={true} autoSlideInterval={5000}>
                         {slides.map((s) => (
-                            <img src={s} style={{'min-width': '-webkit-fill-available'}} className=''/>
+                            <img src={s} style={{ 'minWidth': '-webkit-fill-available' }} key={s} className='' />
                         ))}
                     </Carousel>
                 </div>
                 <div className='flex flex-col max-w-[100%] self-center sm:hidden'>
                     <Carousel children={slides} autoSlide={true} autoSlideInterval={5000}>
                         {slides2.map((s) => (
-                            <img src={s} style={{'min-width': '-webkit-fill-available'}} className=''/>
+                            <img src={s} style={{ 'minWidth': '-webkit-fill-available' }} key={s} className='' />
                         ))}
                     </Carousel>
                 </div>
-                
+
                 {/* <div className="flex justify-center">
                     <RxChevronDown className='animate-bounce drop-shadow-[0_0_5px_rgba(0,0,0,0.8)] shadow-black text-[32px]' />
                 </div> */}
@@ -70,15 +69,17 @@ function Home() {
                     {services.map((data) =>
                         <div className='flex flex-col justify-center rounded-3xl bg-gradient-to-r from-[#741ACD] to-[#670078] m-2' key={data.title}>
                             {/* {data.icon ? <data.icon className='text-9xl pt-8 py-4 self-center' /> : ""} */}
-                            <img src={`/images/${data.icon}.png`} alt="" srcset="" className='w-64 p-8 self-center bg-contain'/>
+                            <img src={`/images/${data.icon}.png`} alt="" srcSet="" className='w-64 p-8 self-center bg-contain' />
                             <h2 className='font-worksans pt-2 font-semibold xl:text-2xl'>{data.title}</h2>
                             <p className='font-worksans pb-8 py-4 font-extralight w-[75%] self-center'>{data.desc}</p>
                         </div>
                     )}
                 </div>
-                <div className='flex flex-row justify-center pb-4'>
-                    <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="Learn More" />
-                </div>
+                <Link to={'/contact-us'}>
+                    <div className='flex flex-row justify-center pb-4'>
+                        <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="Have a query ? Request a callback !" />
+                    </div>
+                </Link>
             </div>
 
             {/* Tour Packages  */}
@@ -91,7 +92,7 @@ function Home() {
                     <Link to={`/destinations/Kerala`}><TourCard place={"Kerala, India"} days={7} price={"20,000"} img={"india-sq"} /></Link>
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
-                    <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="Learn More" />
+                    <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View All" />
                 </div>
             </div>
 
@@ -110,7 +111,7 @@ function Home() {
             </div>
 
             {/* Footer  */}
-            <Footer/>
+            <Footer />
         </div>
     )
 }

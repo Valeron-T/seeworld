@@ -39,7 +39,7 @@ function Destinations() {
 
   async function getDestinations(filters) {
     let queryString = formatQueryString(filters)
-    const response = await fetch(`http://localhost:3000/destinations?${queryString}`);
+    const response = await fetch(`https://api.seeworlddestinations.com/destinations?${queryString}`);
     const jsonData = await response.json();
     console.log(jsonData.data)
     setresults(jsonData.data)
@@ -64,7 +64,7 @@ function Destinations() {
       </div>
 
       <div className="flex flex-col">
-        <h1 className='animate__animated animate__fadeInUp p-4 sm:text-4xl text-2xl font-extrabold uppercase text-white text-center sm:pl-4'>Destinations</h1>
+        <h1 className='animate__animated animate__fadeInUp p-4 xl:text-8xl sm:text-4xl text-2xl font-extrabold uppercase text-white text-center sm:pl-4'>Destinations</h1>
         <div className="flex flex-row font-poppins w-[85%] self-center">
           <div className="sm:max-w-[30%] px-8 py-4 bg-slate-200 rounded-xl sm:block hidden h-min">
             <h1 className='font-semibold pb-2 text-xl'>Filters</h1>
@@ -112,7 +112,7 @@ function Destinations() {
           </div>
           <div className='flex flex-1 sm:pl-4 flex-col'>
             <form className='p-2 w-full' onSubmit={handleSubmit}>
-              <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+              <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -125,8 +125,8 @@ function Destinations() {
             <div className='py-2'>
               {results.map((destination) => (
                 <Link to={`/destinations/${destination.name}`}>
-                <div style={{ '--image-url': `url("/images/${destination.id}.jpg")` }} className='animate__animated animate__fadeInUp flex bg-cover bg-center p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
-                  <h1 className='text-white drop-shadow-2xl'>{destination.name}</h1>
+                <div style={{ '--image-url': `url("/images/${destination.id}.jpg")` }} className='animate__animated animate__fadeInUp flex bg-cover bg-center xl:p-16 p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
+                  <h1 className='text-white drop-shadow-2xl xl:text-2xl'>{destination.name}</h1>
                 </div>
                 </Link>
               ))}
