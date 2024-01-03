@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import ContactUs from "./pages/Contact";
 import { Route, Routes } from "react-router-dom";
+import Reviews from "./pages/Reviews";
 // import Error404 from "./pages/Error404";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Home />}/>
       <Route path="/" element={<Layout />}>
         <Route path="about-us" element={<AboutUs />} />
+        <Route path="reviews" element={<Reviews />} />
         <Route path="destinations" element={<Destinations/>} />
         <Route path="destinations/:destination" element={<Destination/>} />
         <Route path="contact-us" element={<ContactUs />} />
