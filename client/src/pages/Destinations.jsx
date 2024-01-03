@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import 'animate.css'
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
+import { Link } from 'react-router-dom'
 
 function Destinations() {
+  // var activePage = 0
+  var lastpg = 2-1 // replace with api call of number of destinations divided by 5
+  var [activePage, setactivePage] = useState(0)
   const continents = ["Asia", "Africa", "Americas", "Europe", "Australia", "Antarctica"]
   const [filters, setfilters] = useState({
     location: [],
     continents: [],
-    search: []
+    search: [],
+    page: "0".toString()
   })
   const [results, setresults] = useState([])
 
@@ -43,6 +49,12 @@ function Destinations() {
     getDestinations(filters)
   }, [filters])
 
+  useEffect(() => {
+    console.log(activePage) // This is be executed when `loading` state changes
+    setfilters((prevState) => ({...prevState,
+        page: activePage.toString()}))
+  }, [activePage])
+
   return (
     <div className='flex flex-col min-h-[100vh] bg-gray-700'>
       <div className={`sm:px-16 px-6 flex flex-col justify-center items-center z-30 w-full`}>
@@ -52,7 +64,7 @@ function Destinations() {
       </div>
 
       <div className="flex flex-col">
-        <h1 className='animate__animated animate__fadeInUp p-4 sm:text-4xl text-2xl font-extrabold uppercase text-white text-center sm:pl-4'>Destinations</h1>
+        <h1 className='animate__animated animate__fadeInUp p-4 xl:text-8xl sm:text-4xl text-2xl font-extrabold uppercase text-white text-center sm:pl-4'>Destinations</h1>
         <div className="flex flex-row font-poppins w-[85%] self-center">
           <div className="sm:max-w-[30%] px-8 py-4 bg-slate-200 rounded-xl sm:block hidden h-min">
             <h1 className='font-semibold pb-2 text-xl'>Filters</h1>
@@ -99,8 +111,8 @@ function Destinations() {
 
           </div>
           <div className='flex flex-1 sm:pl-4 flex-col'>
-            <form className='w-full' onSubmit={handleSubmit}>
-              <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <form className='p-2 w-full' onSubmit={handleSubmit}>
+              <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -109,13 +121,33 @@ function Destinations() {
                 <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
               </div>
             </form>
+            
             <div className='py-2'>
               {results.map((destination) => (
-                <div  style={{'--image-url': `url("/images/${destination.id}.jpg")`}} className='animate__animated animate__fadeInUp flex bg-cover bg-center p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
-                  <h1 className='text-white drop-shadow-2xl'>{destination.name}</h1>
+                <Link to={`/destinations/${destination.name}`}>
+                <div style={{ '--image-url': `url("/images/${destination.id}.jpg")` }} className='animate__animated animate__fadeInUp flex bg-cover bg-center xl:p-16 p-8 bg-[image:var(--image-url)] bg-slate-300 rounded-xl m-2'>
+                  <h1 className='text-white drop-shadow-2xl xl:text-2xl'>{destination.name}</h1>
                 </div>
-
+                </Link>
               ))}
+            </div>
+
+            <div className="pb-6 p-2 flex flex-row w-full justify-center text-white">
+              <div className={`${activePage == 0 ? "text-gray-500": ""} justify-center self-center pr-5 cursor-pointer`} onClick={(e) => {
+                if (activePage > 0) {
+                  setactivePage(activePage-1)
+                }
+                }}>
+                <AiOutlineLeft/>
+              </div>
+              <p className='flex'>Page {activePage+1}</p>
+              <div className={`${activePage == lastpg ? "text-gray-500": ""} justify-center self-center pl-5 cursor-pointer`} onClick={(e) => {
+                if (activePage < lastpg) {
+                  setactivePage(activePage+1)
+                }
+              }}>
+                <AiOutlineRight />
+              </div>
             </div>
 
           </div>
