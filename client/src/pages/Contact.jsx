@@ -1,32 +1,27 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button';
+import emailjs, { init } from "@emailjs/browser";
 
 function ContactUs() {
     const [status, setStatus] = useState("Submit");
 
+    init("H3xGqvgyO53qeHARU");
+    const form = useRef();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
-        const { name, email, message, category, mobile } = e.target.elements;
-        let details = {
-            name: name.value,
-            email: email.value,
-            mobile: mobile.value,
-            message: message.value,
-            category: category.value,
-        };
-        console.log(name.value)
-        let response = await fetch("http://localhost:3000/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
+        emailjs.sendForm("service_arx6y58", "template_vu07j4g", form.current, "H3xGqvgyO53qeHARU").then(
+            (result) => {
+                alert("Message Sent Successfully.");
+                console.log(result.text);
             },
-            body: JSON.stringify(details),
-        });
+            (error) => {
+                console.log(error.text);
+            }
+        );
         setStatus("Submit");
-        // let result = await response.json();
-        // alert(result.status);
     };
 
     return (
@@ -37,38 +32,38 @@ function ContactUs() {
                 </div>
                 <div className="flex flex-col min-w-[60%]">
                     <h1 className='font-blacksword xl:p-16 xl:text-8xl sm:text-4xl text-2xl text-white p-4 text-center'>Contact Us</h1>
-                    <form className="flex flex-col w-full p-4 font-poppins" onSubmit={handleSubmit}>
+                    <form className="flex flex-col w-full p-4 font-poppins" onSubmit={handleSubmit} ref={form}>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full px-3">
                                 <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="name">
                                     Name
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="name" type="text" placeholder="John Doe" required />
+                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="name" type="text" name="name" placeholder="John Doe" required />
                             </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full px-3">
                                 <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="email">
-                                    Email
+                                    Email (Optional)
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="abc@gmail.com" required />
+                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" name="email" placeholder="abc@gmail.com" />
                             </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full px-3">
                                 <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="mobile">
-                                    Mobile (Optional)
+                                    Mobile 
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="mobile" type="tel" minLength={10} maxLength={10} placeholder="7986548957" required />
+                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="mobile" name="mobile" type="tel" minLength={10} maxLength={10} placeholder="7986548957" required />
                             </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full px-3">
-                            <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="category">
+                                <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="category">
                                     Category
                                 </label>
                                 <div className="relative">
-                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200  py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category">
+                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200  py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category" name='category'>
                                         <option id='Tour Packages'>Tour Packages</option>
                                         <option id='Passport & Visa'>Passport & Visa</option>
                                         <option id='Corporate M.I.C.E'>Corporate M.I.C.E</option>
@@ -88,7 +83,7 @@ function ContactUs() {
                                 <label className="text-white font-worksans font-extralight block uppercase tracking-wide text-xs mb-2" for="message">
                                     Message (Optional)
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message" type="text" placeholder="Message" />
+                                <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message" name='message' type="text" placeholder="Message" />
                                 {/* <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> */}
                             </div>
                         </div>
