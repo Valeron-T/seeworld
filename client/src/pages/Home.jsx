@@ -66,9 +66,9 @@ function Home() {
             <section class="bg-white dark:bg-gray-900 text-center">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                     <div class="">
-                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Check out our upcoming tours</h2>
-                        <p class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                            Promo videos</p>
+                        <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Upcoming Tours</h2>
+                        {/* <p class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                            Promo videos</p> */}
                         <div class="flex flex-col space-y-4 sm:flex-row sm:block sm:space-y-0 sm:space-x-4">
                             {/* <a href={Pdf} target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-map pr-2" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z" id="mainIconPathAttribute"></path> </svg>

@@ -34,9 +34,9 @@ const Navbar = () => {
     <nav className="w-full flex py-3 justify-between items-center navbar">
       {/* TODO: Replace logo */}
       <Link to={"/"}>
-        <img src="/images/seeworld-logo.png" alt="Seeworld destinations" className="w-[120px] h-[69px] xl:scale-150 max-sm:drop-shadow-[0px_0px_1px_rgba(255,255,255,0.5)]" />
+        <img src="/images/seeworld-logo.png" alt="Seeworld destinations" className="lg:w-[180px] lg:h-[105px] w-[120px] h-[69px] xl:scale-150 max-sm:drop-shadow-[0px_0px_1px_rgba(255,255,255,0.5)]" />
       </Link>
-      <ul className="list-none xl:scale-150 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
+      <ul className="list-none xl:scale-150 lg:scale-105 rounded-full md:flex hidden justify-end items-center bg-black/20 backdrop-blur-sm px-8 py-2">
         {navLinks.map((nav, index) => (
           <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px] ${index == navLinks.length-1 ? 'mr-0' : 'mr-14'} text-white hover:opacity-75`}>
             <Link to={`/${nav.id}`}>{nav.title}</Link>
