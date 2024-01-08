@@ -6,13 +6,13 @@ import emailjs, { init } from "@emailjs/browser";
 function ContactUs() {
     const [status, setStatus] = useState("Submit");
 
-    init("H3xGqvgyO53qeHARU");
+    init("2-N6H5J9bnoUN7O78axbc");
     const form = useRef();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
-        emailjs.sendForm("service_arx6y58", "template_vu07j4g", form.current, "H3xGqvgyO53qeHARU").then(
+        emailjs.sendForm("service_0ce78nt", "template_25aao0o", form.current, "2-N6H5J9bnoUN7O78axbc").then(
             (result) => {
                 alert("Message Sent Successfully.");
                 console.log(result.text);
