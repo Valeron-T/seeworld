@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+      visibility: ["group-hover"],
       colors: {
         primary: "#00040f",
         secondary: "#00f6ff",

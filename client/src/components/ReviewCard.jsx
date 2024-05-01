@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaRegStar, FaStar } from 'react-icons/fa';
 
-function ReviewCard({ name, date, rating, comment, rid }) {
+function ReviewCard({ name, date, rating, comment, rid, img }) {
     const stars = [];
 
     for (let i = 0; i < 5; i++) {
@@ -17,7 +17,10 @@ function ReviewCard({ name, date, rating, comment, rid }) {
 
         <div className={`flex flex-col w-full rounded-2xl ${rating>3?"bg-green-800":rating<3?"bg-red-800":"bg-[#005B8E]"} mt-4 text-white group`}>
             <div className="flex flex-row pb-0 p-4 justify-between">
-                <h2 className='text-2xl'>{name}</h2>
+                <div className="flex flex-row align-middle justify-center items-center">
+                    <img src={`/images/reviews/${img}`} className='pr-4' />
+                    <h2 className='text-2xl'>{name}</h2>
+                </div>                
                 <div className="flex flex-row mr-2">
                     {stars}
                 </div>

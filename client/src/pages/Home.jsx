@@ -129,12 +129,14 @@ function Home() {
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Reviews</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 self-center p-4'>
-                    <FeedbackCard name={"Benita DMello"} content={"Good services provided at a reasonable rate. We had been on a trip to Sri Lanka and we had an amazing time. Good hotels and amazing food . Big spacious car along-with a guide provided for all the 8 days."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
-                    <FeedbackCard name={"Rajesh Kotian"} content={"Excellent Service. Quick and Prompt response. Needed an urgent flight ticket, got it done in a matter of 15 minutes at economical price as well."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
-                    <FeedbackCard name={"Linus Rodrigues"} content={"Very courteous and extremely helpful. Follows up on all aspects of the trip to ensure customer is satisfied."} img={"./images/dubai-sq.jpg"} title={"Google User"} />
+                    <FeedbackCard name={"Neil Dsouza"} content={"Shirley and team planned our honeymoon to Sri Lanka and Maldives and it all went smooth without any hassle. Would certainly recommended see world and will continue travelling with them"} img={"/images/reviews/unnamed.png"} title={"Google User"} />
+                    <FeedbackCard name={"Dr Kanta Mukherjee"} content={"Tour sites, selection of hotels, quality of food, was excellent to the taste of every tourist. Enjoyed every bit of tour to North East of India. Well done Seaworld destination Tours and travel LLP !"} img={"/images/reviews/unnamed(2).png"} title={"Google User"} />
+                    <FeedbackCard name={"Prerna Acharya"} content={"Amazing place. We book rooms in Goa. Good good hospitality at the hotels. Everything from the location of the hotel to services everything was just perfect. Thanks for Shirley for the recommendation totally love it."} img={"/images/reviews/unnamed(20).png"} title={"Google User"} />
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
-                    <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View All" />
+                    <Link to={"/reviews"} >
+                        <Button style="transition ease-in-out delay-150 hover:scale-110 duration-600 p-4 rounded-xl bg-gradient-to-br from-[#CD1A40] to-[#FF803C] text-white font-worksans font-extralight" text="View All" />
+                    </Link>
                 </div>
             </div>
 

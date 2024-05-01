@@ -3,16 +3,19 @@ import { useParams } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import 'animate.css';
+import TitleAndDesc from '../components/TitleAndDesc';
+import ExpandableTitleAndDesc from '../components/ExpandableTitleAndDesc';
 
 function Destination() {
     const params = useParams();
     const [info, setinfo] = useState({})
 
     async function getDestinations() {
-        const response = await fetch(`https://api.seeworlddestinations.com/destinations/${params.destination}`);
+        const response = await fetch(`https://api.seeworlddestinations.com/destinations/${params.id}`);
+        // const response = await fetch(`http://localhost:5000/destinations/${params.id}`);
         const jsonData = await response.json();
-        console.log(jsonData.data[0])
-        setinfo(jsonData.data[0])
+        console.log(jsonData.result)
+        setinfo(jsonData.result)
     }
 
     useEffect(() => {
@@ -20,45 +23,44 @@ function Destination() {
         // console.log(info.data[0].name)
     }, []);
 
+
+
     return (
-        <div style={{ '--image-url': `url("/images/${info.id}.jpg")` }} className='flex flex-col min-h-[100vh] bg-cover bg-top bg-[image:var(--image-url)] backdrop-blur-3xl'>
-            <div className={`sm:px-16 px-6 flex flex-col justify-center items-center z-30 w-full`}>
-                <div className={`xl:max-w-[1280px] w-full`}>
-                    <Navbar />
+        <div>
+            <div style={{ '--image-url': `url("https://${info.img}")` }} className='flex flex-col min-h-screen bg-cover bg-top bg-[image:var(--image-url)] bg-gray-700'>
+
+                <div className="backdrop-blur-xl w-[99vw] min-h-screen absolute brightness-50"></div>
+
+                <div className={`sm:px-16 px-6 flex flex-col justify-center items-center z-30 w-full`}>
+                    <div className={`xl:max-w-[1280px] w-full`}>
+                        <Navbar />
+                    </div>
                 </div>
+
+                <div className="flex sm:flex-row flex-col w-full h-full flex-1 justify-center z-30 items-center">
+                    <div className="flex flex-col w-[50%] justify-center items-center">
+                        <h1 className='animate__animated animate__fadeInUp mb-8 drop-shadow-2xl sm:text-6xl text-4xl font-extrabold uppercase text-white text-center sm:pl-4'>{info.name}</h1>
+                        <h1 className='animate__animated animate__fadeInLeft mb-8 sm:text-2xl text-md text-white text-center font-worksans font-light sm:pl-4'>{info.duration}</h1>
+                        <h1 className='animate__animated animate__fadeInLeft max-md:mb-8 sm:text-2xl text-md text-white text-center font-worksans font-light sm:pl-4'>{info.short_des}</h1>
+                    </div>
+                    <div className='w-[50%] m-8 flex justify-center items-center '>
+                        <img src={`https://${info.img}`} className='h-auto sm:min-w-full rounded-2xl object-cover' alt="" />
+                    </div>
+                </div>
+
+
             </div>
 
-            {info != {} ?
+            <div className='p-8 bg-gray-300'>
+                <TitleAndDesc title={"About"} desc={info.description} />
+                <TitleAndDesc title={"Highlights"} desc={info.highlights} />
+                {info.meals && <TitleAndDesc title={"Meals"} desc={info.meals} />}
+                {info.flights && <TitleAndDesc title={"Flights"} desc={info.flights} />}
 
-                <div className="flex flex-1 sm:flex-row flex-col justify-around sm:px-16 px-6">
+                {info.included && <ExpandableTitleAndDesc title={"What's Included ?"} id={2} content={JSON.parse(info.included)} />}
+                {info.itenary && <ExpandableTitleAndDesc title={"Day Wise Itinerary"} id={1} content={JSON.parse(info.itenary)} />}
 
-                    <div className="sm:flex flex-col flex-1 self-center w-[50%] hidden">
-                        <h1 className='animate__animated animate__fadeInUp drop-shadow-2xl sm:text-7xl text-4xl font-extrabold uppercase text-white sm:text-left text-center sm:pl-4'>{info.name}</h1>
-                        <h1 className='animate__animated animate__fadeInLeft sm:text-xl text-md text-white sm:text-left text-center font-worksans font-extralight sm:pl-4'>{info.tagline}</h1>
-                        <div className='flex flex-row text-white py-4 font-worksans sm:scale-100 scale-90 max-sm:self-center'>
-                            <Button text={"Book Now"} />
-                        </div>
-                    </div>
-                    <div className="sm:flex flex-col self-center w-[50%] hidden">
-                        <div className='p-16 backdrop-blur-xl scale-50 rounded-[4rem] bg-gray-800/20 self-center'>
-                            <img className='' src={`/images/${info.id}-logo.png`} alt="" srcset="" />
-                        </div>
-                    </div>
-
-                    <div className="max-sm:flex flex-col self-center max-w-[80%] hidden">
-                        <div className='flex flex-col p-8 backdrop-blur-xl scale-90 rounded-2xl bg-gray-800/20 self-center'>
-                            <img className='max-w-[30vw] self-center pb-4' src={`/images/${info.id}-logo.png`} alt="" srcset="" />
-                            <h1 className='animate__animated animate__fadeInUp drop-shadow-2xl sm:text-8xl text-4xl font-extrabold uppercase text-white sm:text-left text-center sm:pl-4'>{info.name}</h1>
-                            <h1 className='animate__animated animate__fadeInLeft sm:text-xl text-md text-white sm:text-left text-center font-worksans font-extralight sm:pl-4'>{info.tagline}</h1>
-                            <div className='flex flex-row text-white py-4 font-worksans sm:scale-100 scale-90 max-sm:self-center'>
-                                <Button text={"Book Now"} />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                : ""}
+            </div>
 
 
         </div>
