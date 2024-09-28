@@ -15,7 +15,7 @@ function ReviewCard({ name, date, rating, comment, rid, img }) {
     return (
 
 
-        <div className={`flex flex-col w-full rounded-2xl ${rating>3?"bg-green-800":rating<3?"bg-red-800":"bg-[#005B8E]"} mt-4 text-white group`}>
+        <div className={`flex flex-col w-full rounded-2xl ${rating>3?"bg-green-800":rating<3?"bg-green-800":"bg-green-800"} mt-4 text-white group`}>
             <div className="flex flex-row pb-0 p-4 justify-between">
                 <div className="flex flex-row align-middle justify-center items-center">
                     <img src={`/images/reviews/${img}`} className='pr-4' />
