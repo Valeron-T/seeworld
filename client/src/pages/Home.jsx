@@ -82,6 +82,10 @@ function Home() {
                                 <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
                                 Dubai
                             </a>
+                            <a href="https://youtu.be/IEnSEzgKkqE?si=8xZQ8V-FgaL9io_U" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                                <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
+                                Japan
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,9 +133,9 @@ function Home() {
                 <h1 className='animate__animated animate__fadeInUp xl:text-6xl ss:text-3xl text-2xl font-blacksword pt-10 text-red-600 '>Our Top</h1>
                 <h1 className='animate__animated animate__fadeInUp xl:text-[6rem] ss:text-[4rem] uppercase text-[2rem] font-worksans font-extralight pb-2'>Reviews</h1>
                 <div className='grid sm:grid-cols-3 grid-cols-1 self-center p-4'>
-                    <FeedbackCard name={"Neil Dsouza"} content={"Shirley and team planned our honeymoon to Sri Lanka and Maldives and it all went smooth without any hassle. Would certainly recommended see world and will continue travelling with them"} img={"/images/reviews/unnamed.png"} title={"Google User"} />
-                    <FeedbackCard name={"Dr Kanta Mukherjee"} content={"Tour sites, selection of hotels, quality of food, was excellent to the taste of every tourist. Enjoyed every bit of tour to North East of India. Well done Seaworld destination Tours and travel LLP !"} img={"/images/reviews/unnamed(2).png"} title={"Google User"} />
-                    <FeedbackCard name={"Prerna Acharya"} content={"Amazing place. We book rooms in Goa. Good good hospitality at the hotels. Everything from the location of the hotel to services everything was just perfect. Thanks for Shirley for the recommendation totally love it."} img={"/images/reviews/unnamed(20).png"} title={"Google User"} />
+                    <FeedbackCard name={"Vinita Tomar"} content={"We had a wonderful trip to Japan with Shirley and Nevis of See World Destinations. The entire tour was smooth and seamless. Very good hotels with large rooms which we did not expect in Japan,  luxury coaches, delicious Indian and Japanese meals and very knowledgeable English speaking guides. The sights we were taken to were well selected giving us the essence of Japan. All in all a great experience!"} img={"/images/reviews/unnamed(21).png"} title={"Google User"} />
+                    <FeedbackCard name={"Vijay Bal"} content={"Me & wife undertook 10 days Japan trip with Seeworld Destination. We are senior citizens. The trip was very well planned and executed. We could experience best of Japan in the best possible way. The air booking, air travel, hotel booking, transportation and food was done in an efficient & comfortable manner. Shirley & Neves were always available at hand to offer assistance with a smile. Would love to travel with them again. Highly recommend Seeworld Destinations for tours & travel. Baljit & Vijay Bal ."} img={"/images/reviews/unnamed(10).png"} title={"Google User"} />
+                    <FeedbackCard name={"Satish Bajaj"} content={"This message is to convey our sincere thanks and gratitude for meticulously organising our visit to Japan. No doubt we all had wonderful time and it certainly occupies top of the list amongst most memorable holidays. In this short span of 10 days we covered almost all famous places of Japan. The busride and lady guides were excellent. The ground work done to meet the individual requirement of each person is worth appreciating."} img={"/images/reviews/unnamed(5).png"} title={"Google User"} />
                 </div>
                 <div className='flex flex-row justify-center pb-4'>
                     <Link to={"/reviews"} >
