@@ -36,13 +36,9 @@ function Footer() {
           <div className="flex flex-col sm:items-center w-full">
             <h2 className='font-worksans font-semibold pb-4 text-center'>Goa</h2>
             <p className='font-worksans font-extralight'>Dias Holidays</p>
-            <p className='font-worksans font-extralight'>An Unit of Seeworld Destinations</p>
-            <p className='font-worksans font-extralight'>Shop no 5</p>
-            <p className='font-worksans font-extralight'>L and L Correias Pride</p>
-            <p className='font-worksans font-extralight'>Opposite Collectorates Bldg and near Margao KTC bus stand</p>
-            <p className='font-worksans font-extralight'>Margao</p>
-            <p className='font-worksans font-extralight'>Salcete Goa</p>
-            <p className='font-worksans font-extralight'>403601</p>
+            <p className='font-worksans font-extralight'>An Unit of Seeworld Destinations, Shop no 5</p>
+            <p className='font-worksans font-extralight'>L and L Correias Pride, Opposite Collectorates Bldg near Margao KTC bus stand</p>
+            <p className='font-worksans font-extralight'>Margao, Salcete Goa 403601</p>
             <a href='https://maps.app.goo.gl/ccUbVemhVLyJT91q9' className='underline'>Google Maps</a>
           </div>
 
